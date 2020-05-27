@@ -19,10 +19,13 @@ eureka:
       instance-id: order80
       prefer-ip-address: true
 
+
 #openfeign集成了ribbon 默认连接和读取时间为1S，特殊情况在这里设置
 #ribbon:
 #  ReadTimeout: 5000
 #  ConnectTimeout: 5000
 
 
-
+logging:
+  level: #feign以什么日志级别监控哪些接口
+    com.atguigu.springcloud.service.PaymentFeignService: debug
