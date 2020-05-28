@@ -1,0 +1,39 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment_routh #路由id 没有实际意义，保持唯一即可
+          uri: http://localhost:8001 #匹配后提供服务的地址,@#^注意之前丢失了http://匹配不上@#^
+          predicates:
+            - Path=/payment/get/** #断言，路由匹配的进入路由
+
+#        - id: payment_routh2
+#          uri: localhost:8001
+#          predicates:
+#            - Path=/payment/get/discovery/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+#     单机版
+      defaultZone: http://localhost:8761/eureka/
+#      集群版
+#      defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/
+  instance:
+    instance-id: gateway9527
+    prefer-ip-address: true
+    hostname: cloud-gateway-service
+
+#服务提供者的项目名称不可以小写，小写配置不起作用，亲测过
+#负载均衡机制是在@LoadBalanced注解基础之上的，如果使用类文件达到负载均衡
+#需要重写IRule接口并在主启动类上开启@RibbonClient(name = "CLOUD-PAYMENT-SERVICE",configuration = MySelfRule.class)
+#CLOUD-PAYMENT-SERVICE:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    com.netflix.loadbalancer.WeightedResponseTimeRule
