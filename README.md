@@ -41,18 +41,22 @@ Feign重试：
 因为ribbon的重试机制和Feign的重试机制有冲突，所以源码中默认关闭Feign的重试机制，具体看一看源码
 
 要开启Feign的重试机制如下：（Feign默认重试五次 源码中有）
-
+```
 @Bean
 Retryer feignRetryer() {
         return  new Retryer.Default();
 }
+```
+
 ribbon的重试机制 ：
+```
 ribbon:
   ReadTimeout: 3000
   ConnectTimeout: 3000
   MaxAutoRetries: 1 #同一台实例最大重试次数,不包括首次调用
   MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
   OkToRetryOnAllOperations: false  #是否所有操作都重试 
+```
 计算重试的次数：MaxAutoRetries+MaxAutoRetriesNextServer+(MaxAutoRetries *MaxAutoRetriesNextServer) 
 
 即重试3次 加上第一次调用一共产生4次调用 。
