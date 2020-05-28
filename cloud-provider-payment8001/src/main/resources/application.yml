@@ -33,3 +33,5 @@ eureka:
     lease-renewal-interval-in-seconds: 1
     #eruka服务器收到最后一次心跳等待时间上线（默认90秒）
     lease-expiration-duration-in-seconds: 2
+
+
