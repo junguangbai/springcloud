@@ -1,7 +1,7 @@
 package com.atguigu.myrule;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RoundRobinRule;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,6 +16,6 @@ public class MySelfRule {
     @Bean
     public IRule myRule(){
 
-        return new RoundRobinRule(); //new RandomRule(); 随机访问服务器规则，默认的是轮询规则
+        return new RandomRule();//new RoundRobinRule(); // 随机访问服务器规则，默认的是轮询规则
     }
 }
