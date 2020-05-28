@@ -39,11 +39,12 @@ public class PaymentController {
     @GetMapping("/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
+       /* 模拟超时请求，riboon会默认采用重试机制，详情观看github上README
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         if(payment!=null){
             return new CommonResult(200,"查询数据成功haha哈一再来一波哈，serverport="+serverport,payment);
         }else{
