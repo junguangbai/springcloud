@@ -12,12 +12,12 @@ eureka:
     fetch-registry: true
     service-url:
 #     单机版
-      defaultZone: http://eureka8761.com:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 #      集群版
 #      defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/
   instance:
-      instance-id: order80
-      prefer-ip-address: true
+    instance-id: order80
+    prefer-ip-address: true
 
 #服务提供者的项目名称不可以小写，小写配置不起作用，亲测过
 #负载均衡机制是在@LoadBalanced注解基础之上的，如果使用类文件达到负载均衡
