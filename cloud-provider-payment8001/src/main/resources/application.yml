@@ -23,9 +23,9 @@ eureka:
     fetch-registry: true
     service-url:
 #   单机版
-#      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 #   集群版
-      defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/
+#      defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/
   instance:
     instance-id: payment8001
     prefer-ip-address: true
