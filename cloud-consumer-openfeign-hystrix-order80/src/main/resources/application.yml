@@ -29,6 +29,12 @@ ribbon:
 #  OkToRetryOnAllOperations: false  #是否所有操作都重试
 
 
+#开启hystrix
+feign:
+  hystrix:
+    enabled: true
+
+
 #设置hystrix的超时访问时间，公式是(1+MaxAutoRetries+MaxAutoRetriesNextServer)*ReadTimeout,详情见github
 #并不是像上面说的那样，可能环境不同吧，github上保留作参考吧！！！！
 hystrix:
@@ -46,9 +52,6 @@ logging:
     com.atguigu.springcloud.service.PaymentFeignHystrixService: debug
 
 
-#开启hystrix
-feign:
-  hystrix:
-    enabled: true
+
 
 

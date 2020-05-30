@@ -24,6 +24,9 @@
       <module>cloud-provider-hystrix-payment8006</module>
       <module>cloud-consumer-hystrix-dashboard9001</module>
       <module>cloud-gateway9527</module>
+      <module>cloud-stream-rabbitmq-provider8007</module>
+      <module>cloud-stream-rabbitmq-consumer8008</module>
+      <module>cloud-stream-rabbitmq-consumer8009</module>
   </modules>
 
   <!--统一管理jar包版本-->
