@@ -1,0 +1,29 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: cloud-nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848   #配置nacos地址
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml          #指定是yaml的扩展后缀
+        group: DEFAULT_GROUP             #指定不同的分组，类似于java中的包名，每个组当中可以创建不同开发环境,类似pro/dev/test
+        namespace: fe48235e-5d13-499b-b691-d5946334baec #namespace用于区分不同地区的机房，此流水号由nacos自动生成
+
+# nacos配置管理 DataId 的格式 ,在nacos网址8848上配置，支持数据的持久化
+#${spring.application.name}-${spring.profiles.active}-${spring.cloud.nacos.config.file-extension}
+#本例为 : cloud-nacos-config-client-dev.yaml
+############################################################
+# nacos支持集群搭建：
+# 1.在nacos的安装目录的conf文件夹中nacos-mysql.sql黏贴到 mysql中执行脚本。
+# 2.在nacos的安装目录的conf文件夹中application.properties修改如下配置：
+#   spring.datasource.platform=mysql
+#   db.num=1
+#   db.url.0=jdbc:mysql://192.168.6.101:3306/db2020?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true
+#   db.user=root
+#   db.password=root
+# 3.重启nacos
