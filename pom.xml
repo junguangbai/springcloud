@@ -20,13 +20,18 @@
     <module>cloud-consumer-consul-order80</module>
     <module>cloud-consumer-openfeign-order80</module>
     <module>cloud-provider-hystrix-payment8005</module>
-      <module>cloud-consumer-openfeign-hystrix-order80</module>
-      <module>cloud-provider-hystrix-payment8006</module>
-      <module>cloud-consumer-hystrix-dashboard9001</module>
-      <module>cloud-gateway9527</module>
-      <module>cloud-stream-rabbitmq-provider8007</module>
-      <module>cloud-stream-rabbitmq-consumer8008</module>
-      <module>cloud-stream-rabbitmq-consumer8009</module>
+    <module>cloud-consumer-openfeign-hystrix-order80</module>
+    <module>cloud-provider-hystrix-payment8006</module>
+    <module>cloud-consumer-hystrix-dashboard9001</module>
+    <module>cloud-gateway9527</module>
+    <module>cloud-stream-rabbitmq-provider8007</module>
+    <module>cloud-stream-rabbitmq-consumer8008</module>
+    <module>cloud-stream-rabbitmq-consumer8009</module>
+    <module>cloud-alibab-provider-payment8841</module>
+    <module>cloud-alibab-provider-payment8842</module>
+    <module>cloud-alibab-nacos-consumer-payment8843</module>
+      <module>cloud-alibab-nacos-consumer-payment8844</module>
+      <module>cloud-alibaba-config-nacos-client6001</module>
   </modules>
 
   <!--统一管理jar包版本-->

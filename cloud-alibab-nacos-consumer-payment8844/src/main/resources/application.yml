@@ -1,0 +1,10 @@
+server:
+  port: 8844
+
+spring:
+  application:
+    name: cloud-alibaba-nacos-consumer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #配置nacos地址
