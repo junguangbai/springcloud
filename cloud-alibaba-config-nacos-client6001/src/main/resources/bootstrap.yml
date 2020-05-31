@@ -7,12 +7,14 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848   #配置nacos地址
+        server-addr: 192.168.6.101:1111   #配置nacos地址
+        namespace: 597cb3da-ee9f-4ec6-b36c-a5d6e1ebddce
       config:
-        server-addr: localhost:8848
-        file-extension: yaml          #指定是yaml的扩展后缀
-        group: DEFAULT_GROUP             #指定不同的分组，类似于java中的包名，每个组当中可以创建不同开发环境,类似pro/dev/test
-        namespace: fe48235e-5d13-499b-b691-d5946334baec #namespace用于区分不同地区的机房，此流水号由nacos自动生成
+#        server-addr: localhost:8848
+        server-addr: 192.168.6.101:1111   #改成linux下的nginx的端口号
+        file-extension: yaml              #指定是yaml的扩展后缀
+        group: TEST_GROUP              #指定不同的分组，类似于java中的包名，每个组当中可以创建不同开发环境,类似pro/dev/test
+        namespace: 597cb3da-ee9f-4ec6-b36c-a5d6e1ebddce #namespace用于区分不同地区的机房，此流水号由nacos自动生成
 
 # nacos配置管理 DataId 的格式 ,在nacos网址8848上配置，支持数据的持久化
 #${spring.application.name}-${spring.profiles.active}-${spring.cloud.nacos.config.file-extension}
