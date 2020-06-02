@@ -1,0 +1,32 @@
+server:
+  port: 2003
+
+
+spring:
+  application:
+    name: cloud-nacos-seata-account-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: june_tx_group #自定义事物名称，要与seata-server的file.conf中对应
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.6.101:3306/seata_account?serverTimezone=GMT&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.springcloud.entities
+
+logging:
+  level: #feign以什么日志级别监控哪些接口
+    com.atguigu.springcloud.controller.AccountController: debug
+
+feign:
+  hystrix:
+    enabled: false
